@@ -1,0 +1,20 @@
+.Main {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 200%;
+}
+
+.Main > div {
+  padding-top: 10px;
+}
+
+.Main button {
+  min-width: 8em;
+  font-size: inherit;
+}
+
+.Counter {
+  display: inline-block;
+  width: 3em;
+}
+
