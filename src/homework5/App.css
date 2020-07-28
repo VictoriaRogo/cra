@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 100%;
+}
+
+.App Button {
+  height: 2em;
+  min-width: 4.5em;
+  margin: 3px;
+}
+
+.Counter {
+  margin: 1em;
+}
+
+.Controls {
+  padding-bottom: 1em;
+}
