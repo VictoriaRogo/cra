@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.block {
+  min-height: 20px;
+  background-color: #61dafb;
+  margin-top: 2px;
+}
+
+.b1 {
+  background-color: darkseagreen;
+  border: 1px solid #282c34;
+}

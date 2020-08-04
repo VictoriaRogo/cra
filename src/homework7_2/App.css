@@ -1,0 +1,46 @@
+.App {
+  width: 25em;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+button {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+button:focus,
+button:hover,
+.inlineEdit:hover,
+.inlineEdit:focus {
+  background-color: #efefef;
+  border-color: #efefef;
+  border-style: solid;
+  outline: none;
+}
+
+input, button {
+  outline: none;
+}
+
+.inlineEdit {
+  width: 17em;
+  border-color: transparent;
+}
+
+.done {
+  text-decoration-line: line-through;
+}
+
+.check {
+  width: 1em;
+  margin-right: 1em;
+}
+
+.Form {
+  padding: .5em 0;
+}
+
+.Form input {
+  width: 21em;
+}
