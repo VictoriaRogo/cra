@@ -7,12 +7,14 @@ const initialTasks = [
     {
         id: uuidv4(),
         title: 'First Task',
+        description: 'Description 1',
         priority: 2,
         status: 'todo'
     },
     {
         id: uuidv4(),
         title: 'Second Task',
+        description: 'Description 2',
         priority: 3,
         status: 'review'
     }
@@ -33,7 +35,7 @@ function App() {
         setTasks([...tasks, newTask]);
     };
     const updateTask = () => {
-      setTasks([...tasks]);
+        setTasks([...tasks]);
     };
     return (
         <div>
