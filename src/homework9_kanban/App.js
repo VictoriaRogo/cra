@@ -3,24 +3,47 @@ import FormCreateTask from "./FormCreateTask";
 import Board from "./Board";
 import Modal from "./Modal";
 import {v4 as uuidv4} from 'uuid';
+import './app.css';
 
 const initialTasks = [
     {
         id: uuidv4(),
         title: 'First Task',
         description: 'Description 1',
+        priority: 1,
+        status: 'Todo'
+    },
+    {
+        id: uuidv4(),
+        title: 'First Task 2',
+        description: 'Description 1',
         priority: 2,
-        status: 'todo'
+        status: 'Todo'
     },
     {
         id: uuidv4(),
         title: 'Second Task',
         description: 'Description 2',
         priority: 3,
-        status: 'review'
-    }
+        status: 'Review'
+    },
+    {
+        id: uuidv4(),
+        title: 'Third Task',
+        description: 'Description 3',
+        priority: 3,
+        status: 'Progress'
+    },
+    {
+        id: uuidv4(),
+        title: 'Fourth Task',
+        description: 'Description 4',
+        priority: 3,
+        status: 'Done'
+    },
+
 ];
-const statuses = ['todo', 'progress', 'review', 'done'];
+const statuses = ['Todo', 'Progress', 'Review', 'Done'];
 
 function App() {
     const [tasks, setTasks] = useState(initialTasks);
@@ -31,7 +54,7 @@ function App() {
             id: uuidv4(),
             title: e.target[0].value,
             priority: e.target[1].value,
-            status: 'todo'
+            status: 'Todo'
         };
         e.target.reset();
         setTasks([...tasks, newTask]);
@@ -48,7 +71,7 @@ function App() {
     return (
         <div>
             <FormCreateTask addTask={addTask}/>
-            <div className='container'>
+            <div className='container-xl'>
                 <div className='row'>
                     {
                         statuses.map((el, index) =>

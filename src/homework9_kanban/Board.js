@@ -4,7 +4,7 @@ import Task from "./Task";
 function Board({status, tasks=[], updateTask, index, edit}) {
     return (
         <div className='col'>
-            {status}
+            <div className="columnHeader font-weight-bold text-secondary mb-2">{status}</div>
             {
                 tasks
                     .filter(el => el.status === status)
@@ -17,7 +17,6 @@ function Board({status, tasks=[], updateTask, index, edit}) {
                         edit={edit}
                     />)
             }
-            <hr/>
         </div>
     );
 }
