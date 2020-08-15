@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 function ModalBlock({close, modal}) {
     const task = modal || {};
@@ -12,10 +13,10 @@ function ModalBlock({close, modal}) {
     };
     return (
         <div>
-            <Modal isOpen={!!modal} toggle={close}>
+            <Modal show={!!modal} onHide={close}>
                 <form onSubmit={submit}>
-                    <ModalHeader toggle={close}>Edit Task</ModalHeader>
-                    <ModalBody>
+                    <Modal.Header closeButton>Edit Task</Modal.Header>
+                    <Modal.Body>
                         <div className="form-group">
                             <label htmlFor="inputTaskTitle">Title</label>
                             <input
@@ -42,11 +43,11 @@ function ModalBlock({close, modal}) {
                                 <option value='3'>High</option>
                             </select>
                         </div>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" type='submit'>Save</Button>{' '}
-                        <Button color="secondary" onClick={close}>Cancel</Button>
-                    </ModalFooter>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="primary" type='submit'>Save</Button>{' '}
+                        <Button variant="secondary" onClick={close}>Cancel</Button>
+                    </Modal.Footer>
                 </form>
             </Modal>
         </div>
