@@ -42,8 +42,8 @@ function App() {
     const edit = (task) => {
         setModal(task);
     };
-    const toggle = () => {
-        setModal(!modal);
+    const close = () => {
+        setModal(false);
     };
     return (
         <div>
@@ -63,7 +63,7 @@ function App() {
                     }
                 </div>
             </div>
-            <Modal modal={modal} toggle={toggle}/>
+            <Modal modal={modal} close={close}/>
         </div>
     );
 }
