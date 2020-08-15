@@ -2,7 +2,7 @@ import React from 'react';
 
 const statuses = ['todo', 'progress', 'review', 'done'];
 
-function Task({task, updateTask, index, tasks}) {
+function Task({task, updateTask, index, tasks, edit}) {
     return (
         <div className='card'>
             <div className='card-header'>{task.title}</div>
@@ -22,6 +22,7 @@ function Task({task, updateTask, index, tasks}) {
                         tasks.splice(tasks.indexOf(task), 1);
                         updateTask()
                     }}>&times;</button>
+                    <button onClick={() => edit(task)}>Edit</button>
                 </div>
             </div>
         </div>

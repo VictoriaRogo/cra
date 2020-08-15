@@ -1,7 +1,7 @@
 import React from 'react';
 import Task from "./Task";
 
-function Board({status, tasks=[], updateTask, index}) {
+function Board({status, tasks=[], updateTask, index, edit}) {
     return (
         <div className='col'>
             {status}
@@ -14,6 +14,7 @@ function Board({status, tasks=[], updateTask, index}) {
                         index={index}
                         updateTask={updateTask}
                         tasks={tasks}
+                        edit={edit}
                     />)
             }
             <hr/>

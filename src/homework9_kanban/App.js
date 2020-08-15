@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import FormCreateTask from "./FormCreateTask";
 import Board from "./Board";
+import Modal from "./Modal";
 import {v4 as uuidv4} from 'uuid';
 
 const initialTasks = [
@@ -23,6 +24,7 @@ const statuses = ['todo', 'progress', 'review', 'done'];
 
 function App() {
     const [tasks, setTasks] = useState(initialTasks);
+    const [modal, setModal] = useState(false);
     const addTask = e => {
         e.preventDefault();
         const newTask = {
@@ -37,6 +39,12 @@ function App() {
     const updateTask = () => {
         setTasks([...tasks]);
     };
+    const edit = (task) => {
+        setModal(task);
+    };
+    const toggle = () => {
+        setModal(!modal);
+    };
     return (
         <div>
             <FormCreateTask addTask={addTask}/>
@@ -50,10 +58,12 @@ function App() {
                                 index={index}
                                 tasks={tasks}
                                 updateTask={updateTask}
+                                edit={edit}
                             />)
                     }
                 </div>
             </div>
+            <Modal modal={modal} toggle={toggle}/>
         </div>
     );
 }
